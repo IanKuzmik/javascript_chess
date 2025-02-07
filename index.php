@@ -10,13 +10,6 @@
     <div id="game" style="display: flex;">
         <canvas></canvas>  
         <div style="color: white;" id="hud">
-
-            <p>POINTS: <span id="hud-points"></span></p>
-            <p>TURN: <span id="hud-turn"></span></p>
-            <p>MOVE: <span id="hud-move"></span></p>
-            <p>BEST: <span id="hud-best"></span></p>
-            <p>W: <span id="hud-w"></span></p>
-            <p>PSQ: <span id="hud-psq"></span></p>
             <div>
                 <button                     id="start"               >start game</button>
                 <button class='game-button' id="best-moves" disabled >get moves</button>

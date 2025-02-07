@@ -1,7 +1,6 @@
 body { background-color: #333300;}
 canvas { outline: 10px #232301 solid; margin: 25px 50px; max-height: 600px }
 g text {color: white; }
-textarea {background-color: #000; color: red; font-family: 'Courier New', Courier, monospace;}
+textarea {background-color: #000; color: greenyellow; font-family: 'Courier New', Courier, monospace;}
 #hud { padding-top: 50px; }
-#hud p {display: none;}
-#input-box{width:51%;}
+#input-box{width:50%;}
