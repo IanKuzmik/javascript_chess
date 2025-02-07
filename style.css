@@ -4,7 +4,4 @@ g text {color: white; }
 textarea {background-color: #000; color: greenyellow; font-family: 'Courier New', Courier, monospace;}
 #hud { padding-top: 50px; }
 #hud p {display: none;}
-#input-box{width:50%;}
-/* p span#hud-turn,p span#hud-move,p span#hud-best,p span#hud-w,p span#hud-psq {display: none;} */
-
-/* #hud > p:nth-child(1) */
+#input-box{width:52%;}
