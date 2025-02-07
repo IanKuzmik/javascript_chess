@@ -1,7 +1,6 @@
 import GameGUI  from './GameGUI.js';
 import HudGUI   from './HudGUI.js';
 import Trainer  from './Trainer.js';
-import './stockfish-16/stockfish.js';
 
 const START_FEN = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'
 
