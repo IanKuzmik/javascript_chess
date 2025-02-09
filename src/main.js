@@ -37,7 +37,7 @@ class GameState {
 
 const canvas     = document.querySelector('canvas');
 let   game_state = new GameState();
-const gui        = new GameGUI(canvas, game_state.fen);
+let   gui        = new GameGUI(canvas, game_state.fen);
 const hud        = new HudGUI();
 let   trainer;
 const engine     = new Worker('./src/stockfish-16/stockfish.js');
@@ -379,13 +379,20 @@ function highlightLatestMove(){
 }
 
 function getClickedSpace(e) {
-    const xClick = e.clientX + window.scrollX;
-    const yClick = e.clientY + window.scrollY;
+    const singleRatio  = 8;
+    const quarterRatio = 32;
+    
+    const xClick = e.clientX + window.scrollX - 60; // 60 = x margin + outline. make this dynamic
+    const yClick = e.clientY + window.scrollY - 35; // ''
 
     for ( const space in gui.board_map ) {
-        let x = gui.board_map[space].x + gui.size/16;
-        let y = gui.board_map[space].y;
-        if ( x < xClick && xClick < x + gui.size/8 && y < yClick && yClick < y + gui.size/8 + gui.size/32 ) {
+        let x = gui.board_map[space].x - gui.size/quarterRatio; 
+        let y = gui.board_map[space].y - gui.size/quarterRatio;
+        
+        if ( 
+            x < xClick && xClick < x + gui.size/singleRatio && 
+            y < yClick && yClick < y + gui.size/singleRatio       
+        ) {
             return gui.board_map[space];
         }
     }
@@ -702,7 +709,8 @@ function handleInputBox() {
     document.getElementById("input-box").value  = '';
 
     if (input === 'test') {
-        engine.postMessage('d');
+        gui = new GameGUI(canvas, game_state.fen, 900);
+        highlightLatestMove();
         return;
     }
 
@@ -879,3 +887,23 @@ function checkEngineThinkWarning() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
+function checkResponsive() {
+    const window_width  = window.innerWidth;
+    const board_size    = gui.size;
+
+    if (window_width > 700) {
+        if (board_size != 600) {
+            gui = new GameGUI(canvas, game_state.fen, 600);
+            highlightLatestMove();
+        }
+    } else if (window_width > 400) {
+        if (board_size != 300) {
+            gui = new GameGUI(canvas, game_state.fen, 300);
+            highlightLatestMove();
+        }
+    }
+
+}
+
+window.addEventListener('resize', checkResponsive);

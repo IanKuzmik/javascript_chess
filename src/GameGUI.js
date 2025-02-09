@@ -109,6 +109,20 @@ class GameGUI {
         this.addPieces();
     }
 
+    /* Size can only decrease from default, so we don't need to redefine canvase width/height */
+    alterSize(size, fen) {
+        this.canvas.width = size;
+        this.canvas.height = size;
+        this.size = size;
+        this.updateBoard(fen);
+    }
+
+    /* Used for debugging */
+    drawSpot(x,y,color) {
+        this.ctx.fillStyle = color;
+        this.ctx.fillRect(x, y, 5, 5); 
+    }
+
     /* 
     Input: (Object) board_map space, (String) highlight color
     Output: (Void) highlight the given space 

@@ -1,5 +1,5 @@
 body { background-color: #333300;}
-canvas { outline: 10px #232301 solid; margin: 25px 50px; max-height: 600px }
+canvas { outline: 10px #232301 solid; margin: 25px 50px; height: 100% }
 g text {color: white; }
 textarea {background-color: #000; color: greenyellow; font-family: 'Courier New', Courier, monospace;}
 #hud { padding-top: 50px; }
