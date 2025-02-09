@@ -37,6 +37,9 @@ class GameState {
 
 const canvas     = document.querySelector('canvas');
 let   game_state = new GameState();
+//
+// TODO: Set initial size
+//
 let   gui        = new GameGUI(canvas, game_state.fen);
 const hud        = new HudGUI();
 let   trainer;
@@ -487,6 +490,22 @@ function setPawnUpgrade(upgrade) {
     hud.writeToLog(`Pawn Upgrade = ${PAWN_UPGRADE}`);
 }
 
+function checkResponsive() {
+    const window_width  = window.innerWidth;
+    const board_size    = gui.size;
+
+    if (window_width > 700) {
+        if (board_size != 600) {
+            gui = new GameGUI(canvas, game_state.fen, 600);
+            highlightLatestMove();
+        }
+    } else if (window_width > 400) {
+        if (board_size != 300) {
+            gui = new GameGUI(canvas, game_state.fen, 300);
+            highlightLatestMove();
+        }
+    }
+}
 
 
 
@@ -756,6 +775,8 @@ function handleInputBox() {
 /*#########*/
 
 function init() {
+    window.addEventListener('resize', checkResponsive);
+    checkResponsive();
     setButtonListeners();
     engine.onmessage = event => {handleMessage(event)};
     canvas.addEventListener('click', e => {handleClick(e)});
@@ -825,7 +846,6 @@ function resetAll() {
 
 }
 
-
 function pushGoodMove(array, data) {
     const move_index    = data.search(' pv ') + 4;
     const score_index   = data.search(' cp ') + 4;
@@ -887,23 +907,3 @@ function checkEngineThinkWarning() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-
-function checkResponsive() {
-    const window_width  = window.innerWidth;
-    const board_size    = gui.size;
-
-    if (window_width > 700) {
-        if (board_size != 600) {
-            gui = new GameGUI(canvas, game_state.fen, 600);
-            highlightLatestMove();
-        }
-    } else if (window_width > 400) {
-        if (board_size != 300) {
-            gui = new GameGUI(canvas, game_state.fen, 300);
-            highlightLatestMove();
-        }
-    }
-
-}
-
-window.addEventListener('resize', checkResponsive);

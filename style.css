@@ -1,6 +1,12 @@
 body { background-color: #333300;}
-canvas { outline: 10px #232301 solid; margin: 25px 50px; height: 100% }
-g text {color: white; }
-textarea {background-color: #000; color: greenyellow; font-family: 'Courier New', Courier, monospace;}
-#hud { padding-top: 50px; }
-#input-box{width:50%;}
+canvas { outline: 10px #232301 solid; margin: 25px 50px; height: fit-content; width: fit-content; }
+g text { color: white; }
+textarea { background-color: #000; color: greenyellow; font-family: 'Courier New', Courier, monospace;}
+#hud { padding-top: 50px; margin: 25px 0px; }
+#input-box{ width:50%; }
+#game { flex-direction: column; }
+
+@media screen and (min-width: 700px) {
+    #game { flex-direction: row; }
+    #hud { padding-top: 50px; margin: 0; }
+  }
