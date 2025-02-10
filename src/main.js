@@ -38,9 +38,6 @@ class GameState {
 
 const canvas     = document.querySelector('canvas');
 let   game_state = new GameState();
-//
-// TODO: Set initial size
-//
 let   gui        = new GameGUI(canvas, game_state.fen);
 const hud        = new HudGUI();
 let   trainer;
