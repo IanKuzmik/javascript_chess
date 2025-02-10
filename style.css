@@ -6,7 +6,8 @@ textarea { background-color: #000; color: greenyellow; font-family: 'Courier New
 #input-box{ width:50%; }
 #game { flex-direction: column; }
 
-@media screen and (min-width: 700px) {
+
+@media screen and (min-width: 1200px) {
     #game { flex-direction: row; }
     #hud { padding-top: 50px; margin: 0; }
   }

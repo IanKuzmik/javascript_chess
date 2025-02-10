@@ -1,3 +1,4 @@
+
 class GameLog {
 
     constructor() {

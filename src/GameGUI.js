@@ -1,3 +1,4 @@
+
 import Piece from './Piece.js'
 
 /* order of array items matches FEN notation */

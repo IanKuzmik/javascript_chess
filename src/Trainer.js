@@ -1,3 +1,4 @@
+
 const QUEENS_GAMBIT_OPENING_MOVES = {
     /* -- First Move  -- */
     'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'          : ['d2d4'],
@@ -60,7 +61,6 @@ class Trainer {
     }
 
     verifyAnswer(fen, move) { 
-        console.log(fen);
         if (this.fen_dict[fen].includes(move)) {
             this.pushMove(move);
             return true;

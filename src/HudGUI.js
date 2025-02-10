@@ -1,3 +1,4 @@
+
 import WDLGraph from './WDLGraph.js';
 import GameLog from './GameLog.js';
 
@@ -21,15 +22,6 @@ class HudGUI {
     }
 
     updateHudData(data) {
-
-        // console.log(data)
-
-        // this.points_ele.innerHTML = this.points;
-        // this.turn_ele.innerHTML   = (data.turn);
-        // this.move_ele.innerHTML   = data.move;
-        // this.best_ele.innerHTML   = data.best;
-        // this.w_ele.innerHTML      = (parseInt(data.w)   > this.hist_w.at(-1))   ? '+' : (parseInt(data.w)   == this.hist_w.at(-1))   ? '=' : '-';
-        // this.psq_ele.innerHTML    = (parseInt(data.psq) > this.hist_psq.at(-1)) ? '+' : (parseInt(data.psq) == this.hist_psq.at(-1)) ? '=' : '-';
         
         const w_delta      = (parseInt(data.w)   > this.hist_w.at(-1))   ? 'Increase' : (parseInt(data.w) == this.hist_w.at(-1))     ? 'No Change' : 'Decrease';
         const psq_delta    = (parseInt(data.psq) > this.hist_psq.at(-1)) ? 'Increase' : (parseInt(data.psq) == this.hist_psq.at(-1)) ? 'No Change' : 'Decrease';
