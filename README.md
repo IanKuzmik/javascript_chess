@@ -2,7 +2,7 @@
 
 This is a simple chess app written in pure javascript with a focus on utilizing the Canvas element. All graphics are programmatically generated. 
 
-I'm leveraging a Stockfish 16 engine compiled into JavaScript, specifically sourced from [this repository from nmrugg] (https://github.com/nmrugg/stockfish.js). I've made superficial modifications to the C++ source code which allow the engine to accept more commands. 
+I'm leveraging a Stockfish 16 engine compiled into JavaScript, specifically sourced from [this repository from nmrugg](https://github.com/nmrugg/stockfish.js). I've made superficial modifications to the C++ source code which allow the engine to accept more commands. 
 
 I'm also utilizing [d3](https://github.com/d3/d3) for graphing Win-Draw-Loss data. 
 
