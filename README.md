@@ -24,4 +24,4 @@ Increase Engine Accuracy via the terminal for more accurate rating of good moves
 
 The layout is responsive, and this program will work on mobile, but it is not optimized for it. 
 
-You can play it [Here](https://chess.taprootcoding.com])
+You can play it [Here](https://chess.taprootcoding.com)
