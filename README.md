@@ -23,3 +23,5 @@ The 'Training' mode is only used right now for practicing two openings, one for 
 Increase Engine Accuracy via the terminal for more accurate rating of good moves (at the cost of processing speed). Default accuracy is 12, which does a pretty good job without being too slow. 
 
 The layout is responsive, and this program will work on mobile, but it is not optimized for it. 
+
+You can play it [Here](https://chess.taprootcoding.com])
